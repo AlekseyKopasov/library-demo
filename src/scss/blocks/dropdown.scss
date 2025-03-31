@@ -1,0 +1,63 @@
+@use "../mixins";
+
+@use "../variables";
+
+.dropdown {
+
+  position: relative;
+  transition: transform variables.$trans-default;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-bottom: 16px;
+  }
+
+  &__title {
+    margin: 0;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 300;
+
+    color: variables.$color-rhino;
+  }
+
+  &__icon {
+    max-width: 24px;
+    max-height: 24px;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    color: variables.$color-rhino;
+  }
+
+  &__content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+
+    width: 100%;
+
+    visibility: hidden;
+
+    background-color: red;
+
+    transition: opacity variables.$trans-default;
+  }
+
+  &.is-open {
+
+    .dropdown__icon {
+      transform: rotate(-180deg);
+    }
+
+    .dropdown__content {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

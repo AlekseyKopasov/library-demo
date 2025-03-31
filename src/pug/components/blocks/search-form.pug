@@ -1,0 +1,63 @@
+mixin search-form()
+  .search-form
+    form
+      .search-form__wrapper
+        .search-form__field(tabindex="0")
+          input(type="text", placeholder="Поиск по названию")
+
+        .search-form__field(tabindex="0")
+          .search-form__dropdown(data-searh-form="dropdown-autor").is-open
+            .search-form__dropdown-top
+              h3.search-form__dropdown-title Автор
+              +icon("icon_arrow", 24, 24).search-form__dropdown-icon
+
+        .search-form__field(tabindex="0")
+          .search-form__dropdown(data-searh-form="dropdown-genre")
+            .search-form__dropdown-top
+              h3.search-form__dropdown-title Жанр
+              +icon("icon_arrow", 24, 24).search-form__dropdown-icon
+
+      .search-form__buttons
+        +btn({
+          text: "Поиск",
+          ariaLabel: "Поиск",
+        }).btn.btn__search
+
+        +btn({
+          type: "reset",
+          text: "Сбросить",
+          ariaLabel: "Сбросить",
+        }).btn.btn__reset
+
+      .search-form__footer
+        .search-form__dropdown-content(data-searh-form="dropdown-autor")
+          ul.search-form__dropdown-list
+            li.search-form__dropdown-item
+              a(href="#").search-form__dropdown-link Автор 1
+            li.search-form__dropdown-item
+              a(href="#").search-form__dropdown-link Автор 2
+            li.search-form__dropdown-item
+              a(href="#").search-form__dropdown-link Автор 3
+
+        .search-form__dropdown-content(data-searh-form="dropdown-genre")
+          ul.search-form__dropdown-list
+            li.search-form__dropdown-item
+              a(href="#").search-form__dropdown-link Хирургия
+            li.search-form__dropdown-item
+              a(href="#").search-form__dropdown-link Онкология
+            li.search-form__dropdown-item
+              a(href="#").search-form__dropdown-link Женское здоровье
+            li.search-form__dropdown-item
+              a(href="#").search-form__dropdown-link Кардиология
+            li.search-form__dropdown-item
+              a(href="#").search-form__dropdown-link Маммология
+            li.search-form__dropdown-item
+              a(href="#").search-form__dropdown-link Ядерная медицина
+            li.search-form__dropdown-item
+              a(href="#").search-form__dropdown-link Травматология и ортопедия
+            li.search-form__dropdown-item
+              a(href="#").search-form__dropdown-link Урология
+            li.search-form__dropdown-item
+              a(href="#").search-form__dropdown-link Метаболическая коррекция
+            li.search-form__dropdown-item
+              a(href="#").search-form__dropdown-link Реабилитация

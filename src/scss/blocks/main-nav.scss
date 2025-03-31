@@ -37,6 +37,7 @@
     font-size: 14px;
     line-height: 1.2;
     font-weight: 300;
+    letter-spacing: 0.8px;
     color: variables.$color-default-white;
 
     transition: color variables.$trans-default;
@@ -48,6 +49,7 @@
 
 
     @media (hover: hover) {
+
       &:hover {
         color: variables.$color-apple;
       }

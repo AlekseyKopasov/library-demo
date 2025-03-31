@@ -11,6 +11,7 @@
   width: 100%;
   min-height: 650px;
   background-color: variables.$color-blue;
+  overflow: hidden;
 
   @include mixins.vp-767 {
     min-height: 476px;
@@ -18,10 +19,7 @@
 
   &__image {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
     z-index: 1;
 
     img {
@@ -53,7 +51,7 @@
       bottom: 0;
       left: 0;
 
-      transform: translate3d(22px, calc(70% - 22px), 0);
+      transform: translate3d(22px, -22px, 0);
 
       max-width: 624px;
       max-height: 338px;
@@ -61,7 +59,7 @@
       height: 100%;
 
       filter: blur(181.5px);
-      background: rgba(18, 54, 100, 0.6);
+      background: rgb(18 54 100 / 60%);
 
       z-index: -1;
     }
@@ -75,7 +73,7 @@
     font-size: 88px;
     line-height: 1.2;
     font-weight: 300;
-    letter-spacing: 0.32px;
+    letter-spacing: 4px;
 
     text-transform: uppercase;
 
@@ -83,6 +81,7 @@
 
     @include mixins.vp-767 {
       font-size: 24px;
+      letter-spacing: 1px;
     }
   }
 
@@ -92,6 +91,7 @@
     font-size: 20px;
     line-height: 1.5;
     font-weight: 300;
+    letter-spacing: 0.8px;
     color: variables.$color-default-white;
 
     @include mixins.vp-767 {

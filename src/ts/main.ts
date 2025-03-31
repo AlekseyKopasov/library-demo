@@ -1,5 +1,7 @@
 import './types/index.d.ts';
 
+import { initSearchDropdowns } from './modules/search-dropdown'
+
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -9,6 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
   window.addEventListener('load', () => {
-    // initCustomSelect();
+    initSearchDropdowns();
   });
 });
