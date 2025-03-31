@@ -4,9 +4,17 @@
 
 .hero {
   position: relative;
+
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   min-height: 650px;
   background-color: variables.$color-blue;
+
+  @include mixins.vp-767 {
+    min-height: 476px;
+  }
 
   &__image {
     position: absolute;
@@ -26,9 +34,18 @@
 
   &__content {
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+
     max-width: 710px;
-    padding-top: 226px;
+    margin-top: auto;
+    padding: 60px 0 238px;
     z-index: 2;
+
+    @include mixins.vp-767 {
+      padding-bottom: 68px;
+    }
 
     &::after {
       content: "";
@@ -63,6 +80,10 @@
     text-transform: uppercase;
 
     color: variables.$color-default-white;
+
+    @include mixins.vp-767 {
+      font-size: 24px;
+    }
   }
 
   &__description {
@@ -72,5 +93,9 @@
     line-height: 1.5;
     font-weight: 300;
     color: variables.$color-default-white;
+
+    @include mixins.vp-767 {
+      font-size: 16px;
+    }
   }
 }
