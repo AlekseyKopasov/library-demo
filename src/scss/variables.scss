@@ -1,0 +1,53 @@
+// Colors
+// ---------------------------------
+
+// Default
+
+$color-default-white: #ffffff;
+$color-default-black: #000000;
+
+// Project palette
+$color-rhino:         #374250;
+$color-solitude:      #eaf0f8;
+$color-apple:         #71bf44;
+$color-blue:          #123664;
+
+// для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
+
+// Gradient
+// $black-to-right: linear-gradient(90deg, rgb(0 0 0 / 75%) 0%, rgb(0 0 0 / 0%) 75%);
+
+// Typography
+// ---------------------------------
+
+$fz-default: 16px;
+
+$ff-default: 'Inter', 'Arial', sans-serif;
+
+// Animation
+// ---------------------------------
+
+$tf-default: ease;
+$trans-default: 0.3s $tf-default;
+
+// если требуется изинг отличный от $tf-default, то переменную называем не цифрой
+$trans-modal: 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+$trans-600: 0.6s $tf-default;
+
+// Viewports
+// ---------------------------------
+
+$vp-320: 320px;
+$vp-375: 375px;
+$vp-425: 425px;
+$vp-768: 768px;
+$vp-1024: 1024px;
+$vp-1280: 1280px;
+$vp-1440: 1440px;
+$vp-1920: 1920px;
+
+// Retina
+// ---------------------------------
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
