@@ -8,13 +8,13 @@ mixin search-form
         .search-form__field(tabindex="0", data-search-toggle="author")
           .search-form__dropdown
             .search-form__dropdown-top
-              h3.search-form__dropdown-title Автор втор втор втор втор втор втор
+              h3.search-form__dropdown-title(data-title="Автор") Автор
               +icon("icon_arrow", 24, 24).search-form__dropdown-icon
 
         .search-form__field(tabindex="0", data-search-toggle="genre")
           .search-form__dropdown
             .search-form__dropdown-top
-              h3.search-form__dropdown-title Жанр
+              h3.search-form__dropdown-title(data-title="Жанр") Жанр
               +icon("icon_arrow", 24, 24).search-form__dropdown-icon
 
       .search-form__buttons
