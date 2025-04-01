@@ -1,63 +1,56 @@
-mixin search-form()
+mixin search-form
   .search-form
     form
       .search-form__wrapper
         .search-form__field(tabindex="0")
           input(type="text", placeholder="Поиск по названию")
 
-        .search-form__field(tabindex="0")
-          .search-form__dropdown(data-searh-form="dropdown-autor").is-open
+        .search-form__field(tabindex="0", data-search-toggle="author")
+          .search-form__dropdown
             .search-form__dropdown-top
-              h3.search-form__dropdown-title Автор
+              h3.search-form__dropdown-title Автор втор втор втор втор втор втор
               +icon("icon_arrow", 24, 24).search-form__dropdown-icon
 
-        .search-form__field(tabindex="0")
-          .search-form__dropdown(data-searh-form="dropdown-genre")
+        .search-form__field(tabindex="0", data-search-toggle="genre")
+          .search-form__dropdown
             .search-form__dropdown-top
               h3.search-form__dropdown-title Жанр
               +icon("icon_arrow", 24, 24).search-form__dropdown-icon
 
       .search-form__buttons
-        +btn({
-          text: "Поиск",
-          ariaLabel: "Поиск",
-        }).btn.btn__search
+        +btn({ text: "Поиск", ariaLabel: "Поиск", }).btn.btn__search
 
-        +btn({
-          type: "reset",
-          text: "Сбросить",
-          ariaLabel: "Сбросить",
-        }).btn.btn__reset
+        +btn({ type: "reset", text: "Сбросить", ariaLabel: "Сбросить", }).btn.btn__reset
 
       .search-form__footer
-        .search-form__dropdown-content(data-searh-form="dropdown-autor")
+        .search-form__dropdown-content(data-search-content="author")
           ul.search-form__dropdown-list
             li.search-form__dropdown-item
-              a(href="#").search-form__dropdown-link Автор 1
+              a.search-form__dropdown-link(href="#") Автор 1
             li.search-form__dropdown-item
-              a(href="#").search-form__dropdown-link Автор 2
+              a.search-form__dropdown-link(href="#") Автор 2
             li.search-form__dropdown-item
-              a(href="#").search-form__dropdown-link Автор 3
+              a.search-form__dropdown-link(href="#") Автор 3
 
-        .search-form__dropdown-content(data-searh-form="dropdown-genre")
+        .search-form__dropdown-content(data-search-content="genre")
           ul.search-form__dropdown-list
             li.search-form__dropdown-item
-              a(href="#").search-form__dropdown-link Хирургия
+              a.search-form__dropdown-link(href="#") Хирургия
             li.search-form__dropdown-item
-              a(href="#").search-form__dropdown-link Онкология
+              a.search-form__dropdown-link(href="#") Онкология
             li.search-form__dropdown-item
-              a(href="#").search-form__dropdown-link Женское здоровье
+              a.search-form__dropdown-link(href="#") Женское здоровье
             li.search-form__dropdown-item
-              a(href="#").search-form__dropdown-link Кардиология
+              a.search-form__dropdown-link(href="#") Кардиология
             li.search-form__dropdown-item
-              a(href="#").search-form__dropdown-link Маммология
+              a.search-form__dropdown-link(href="#") Маммология
             li.search-form__dropdown-item
-              a(href="#").search-form__dropdown-link Ядерная медицина
+              a.search-form__dropdown-link(href="#") Ядерная медицина
             li.search-form__dropdown-item
-              a(href="#").search-form__dropdown-link Травматология и ортопедия
+              a.search-form__dropdown-link(href="#") Травматология и ортопедия
             li.search-form__dropdown-item
-              a(href="#").search-form__dropdown-link Урология
+              a.search-form__dropdown-link(href="#") Урология
             li.search-form__dropdown-item
-              a(href="#").search-form__dropdown-link Метаболическая коррекция
+              a.search-form__dropdown-link(href="#") Метаболическая коррекция
             li.search-form__dropdown-item
-              a(href="#").search-form__dropdown-link Реабилитация
+              a.search-form__dropdown-link(href="#") Реабилитация

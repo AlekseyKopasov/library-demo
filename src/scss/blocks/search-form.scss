@@ -1,6 +1,6 @@
-@use "../mixins";
+@use '../mixins';
 
-@use "../variables";
+@use '../variables';
 
 .search-form {
   position: relative;
@@ -11,6 +11,7 @@
 
   transform: translateY(-178px);
   z-index: 10;
+  white-space: nowrap;
 
   @include mixins.vp-767 {
     padding: 30px 20px;
@@ -30,9 +31,14 @@
   }
 
   &__field {
+    max-width: calc(100% / 3 - 28px);
     width: 100%;
     border-bottom: 1px solid variables.$color-rhino;
     transition: border-bottom-color variables.$trans-default;
+
+    @include mixins.vp-767 {
+      max-width: 100%;
+    }
 
     input {
       width: 100%;
@@ -73,6 +79,7 @@
   &__dropdown {
     position: relative;
     transition: transform variables.$trans-default;
+    z-index: 2;
   }
 
   &__dropdown-top {
@@ -96,6 +103,10 @@
     letter-spacing: 0.8px;
 
     color: variables.$color-rhino;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
   }
 
   &__dropdown-icon {
@@ -111,7 +122,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    transform: translateX(-999px);
+    transform: translateX(-9999px);
     opacity: 0;
     padding: 40px 0 0;
 
@@ -120,7 +131,16 @@
     visibility: hidden;
     background-color: variables.$color-alice-blue;
 
-    transition: opacity variables.$trans-default;
+    &.is-active {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+
+      @include mixins.vp-767 {
+        transform: translateX(0) translateY(-82px);
+      }
+    }
 
     @include mixins.vp-767 {
       transform: translateY(-78px);
@@ -155,29 +175,7 @@
     .search-form__dropdown-icon {
       transform: rotate(-180deg);
     }
-
-    .search-form__dropdown-content {
-      position: static;
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(0);
-
-      @include mixins.vp-767 {
-        transform: translateX(0) translateY(-82px);
-      }
-    }
   }
-
-  // .search-form__dropdown-content[data-searh-form="dropdown-genre"] {
-  //   position: static;
-  //   opacity: 1;
-  //   visibility: visible;
-  //   transform: translateX(0);
-
-  //   @include mixins.vp-767 {
-  //     transform: translateX(0) translateY(-82px);
-  //   }
-  // }
 
   &__dropdown-link {
     transition: color variables.$trans-default;

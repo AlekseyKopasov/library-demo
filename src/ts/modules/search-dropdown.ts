@@ -1,11 +1,39 @@
 function formHandler(evt: Event): void {
   const target = evt.target as HTMLElement;
+  const parent = target.closest('[data-search-toggle]') as HTMLElement;
+  const id = parent?.dataset.searchToggle;
+  const toggleEl = parent?.querySelector('.search-form__dropdown');
 
-  if (target.dataset.searhForm) {
-    // const tag = target.dataset.searhForm;
-    // const content = document.querySelector(`.search-form__dropdown-content [data-searh-form=${tag}]`);
+  if (!id || !toggleEl) {
+    return;
+  }
 
-    // console.log('content :>> ', content);
+  const activeToggle = document.querySelector('.search-form__dropdown.is-open');
+  const activeContent = document.querySelector('.search-form__dropdown-content.is-active');
+  activeToggle?.classList.remove('is-open');
+  activeContent?.classList.remove('is-active');
+
+  const dropdown = document.querySelector(`[data-search-content="${id}"]`) as HTMLElement;
+  dropdown.classList.add('is-active');
+
+  toggleEl.classList.toggle('is-open');
+
+  if (activeToggle === toggleEl) {
+    activeToggle.classList.remove('is-open');
+    activeContent?.classList.remove('is-active');
+  }
+}
+
+function formResetHandler(): void {
+  const activeToggle = document.querySelector('.search-form__dropdown.is-open');
+  const activeContent = document.querySelector('.search-form__dropdown-content.is-active');
+
+  if (activeToggle) {
+    activeToggle.classList.remove('is-open');
+  }
+
+  if (activeContent) {
+    activeContent.classList.remove('is-active');
   }
 }
 
@@ -16,5 +44,6 @@ export const initSearchDropdowns = () => {
     return;
   }
 
-  searchForm.addEventListener('click', formHandler)
-}
+  searchForm.addEventListener('click', formHandler);
+  searchForm.addEventListener('reset', formResetHandler);
+};
