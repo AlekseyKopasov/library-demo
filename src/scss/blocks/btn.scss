@@ -1,6 +1,6 @@
-@use "../mixins";
+@use '../mixins';
 
-@use "../variables";
+@use '../variables';
 
 .btn {
   padding: 14px 20px;
@@ -29,12 +29,14 @@
     border-color: variables.$color-default-white;
   }
 
-  &__search {
+  &--search {
     border: 1px solid transparent;
     background-color: variables.$color-apple;
     color: variables.$color-default-white;
 
-    transition: background-color variables.$trans-default, color variables.$trans-default;
+    transition:
+      background-color variables.$trans-default,
+      color variables.$trans-default;
 
     @media (hover: hover) {
 

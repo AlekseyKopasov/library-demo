@@ -18,9 +18,9 @@ mixin search-form
               +icon("icon_arrow", 24, 24).search-form__dropdown-icon
 
       .search-form__buttons
-        +btn({ text: "Поиск", ariaLabel: "Поиск", }).btn.btn__search
+        +btn({ text: "Поиск", ariaLabel: "Поиск", }).btn.btn--search
 
-        +btn({ type: "reset", text: "Сбросить", ariaLabel: "Сбросить", }).btn.btn__reset
+        +btn({ type: "reset", text: "Сбросить", ariaLabel: "Сбросить", }).btn.btn--reset
 
       .search-form__footer
         .search-form__dropdown-content(data-search-content="author")
